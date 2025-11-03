@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     CharacterController cc; //CharacterController 컴포넌트
     public float gravity = -15; //중력 가속도 크기
     float yVelocity = 0; //수직 속도
+    public float jumpPower = 5; //점프 크기
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class PlayerMove : MonoBehaviour
         if(cc.isGrounded) //바닥에 있을 경우, 수직항력을 처리하기 위해 속도 0으로 설정(떨어질 때 자연스럽게 중력이 적용되도록)
         {
             yVelocity = 0;
+        }
+        if(ARAVRInput.GetDown(ARAVRInput.Button.Two, ARAVRInput.Controller.RTouch))
+        {
+            yVelocity = jumpPower;
         }
 
         dir.y = yVelocity;
