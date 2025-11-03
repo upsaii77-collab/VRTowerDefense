@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     public Transform bulletImpact;//총알 파편 효과
     ParticleSystem bulletEffect; //총알 파편 파티클 시스템
     AudioSource bulletAudio; //총알 발사 사운드
+    public Transform crosshair; //크로스헤어를 위한 속성
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ARAVRInput.DrawCrosshair(crosshair); //크로스헤어 표시
         if(ARAVRInput.GetDown(ARAVRInput.Button.IndexTrigger))
         {
 
