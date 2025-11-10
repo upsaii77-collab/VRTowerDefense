@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 336901616}
   - component: {fileID: 336901618}
   - component: {fileID: 336901619}
+  - component: {fileID: 336901620}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -520,12 +521,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336901613}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7df1db8967487774bb48393c2d343127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teleportCircleUI: {fileID: 662955346}
+--- !u!114 &336901620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336901613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00eb35ec655046e458efd4c8d9e24f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportCircleUI: {fileID: 662955346}
+  lineSmooth: 40
+  curveLength: 50
+  gravity: -60
+  simulateTime: 0.02
 --- !u!1 &404699038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1289ca784b0bd647a116cc53b238460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 200
+  sensitivity: 1000
 --- !u!1001 &988166445
 PrefabInstance:
   m_ObjectHideFlags: 0
