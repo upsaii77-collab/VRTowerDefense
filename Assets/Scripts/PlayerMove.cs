@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed = 5; //이동속도 
     CharacterController cc; //CharacterController 컴포넌트
-    public float gravity = -15; //중력 가속도 크기
+    public float gravity = -10; //중력 가속도 크기
     float yVelocity = 0; //수직 속도
     public float jumpPower = 5; //점프 크기
 
@@ -23,6 +23,8 @@ public class PlayerMove : MonoBehaviour
         float h = ARAVRInput.GetAxis("Horizontal"); //사용자의 입력을 받음
         float v = ARAVRInput.GetAxis("Vertical");
         Vector3 dir = new Vector3(h, 0, v); //3차원 구조의 방향 생성
+
+        dir = Camera.main.transform.TransformDirection(dir);  //사용자가 바라보는 방향으로 입력 값 변화
 
         yVelocity += gravity * Time.deltaTime; //중력을 적용한 수직 방향(미래 속도=현재 속도 + 가속도*)
 
